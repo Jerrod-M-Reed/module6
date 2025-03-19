@@ -1,0 +1,119 @@
+        img	{ 
+			max-width: 100%;
+			height: auto;
+			float: left;
+			padding: 20px;
+		}
+		
+		p.clear {
+		clear: both;
+		}
+		
+		header {
+            grid-area: header;
+            background-color: silver;
+			padding: 20px;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: silver;
+			padding: 20px;
+        }
+
+        main {
+            grid-area: main;
+            background-color: white;
+			padding: 20px;
+        }
+
+        aside {
+			grid-area: aside;
+            background-color: silver;
+			padding: 20px;
+		}
+
+        footer {
+            grid-area: footer;
+            background-color: silver;
+			padding: 20px;
+        }
+		footer2 {
+            text-align: center;
+			grid-area: footer;
+            background-color: yellow;
+			padding: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header header aside'
+                'nav nav main main main aside'
+                'nav nav main main main aside'
+                'nav nav main main main aside'
+				'footer footer footer footer footer footer';
+            grid-gap: .5em;
+            padding: .5em;
+			
+			max-width: 62em;
+			margin: auto;
+        }
+
+
+        ul li {
+            list-style-type: none;
+        }
+
+
+        /*FIRST BREAK POINT === tablet */
+        @media only screen and (max-width : 900px) {
+            body {
+                background: white;
+            }
+
+            .grid-container {
+                display: grid;
+                grid-template-areas:
+                                        'header header header header header header'
+					'nav nav nav nav nav nav'
+                    'main main main main aside aside'
+                    'footer footer footer footer footer footer';
+                grid-gap: .5em;
+                padding: .5em;
+            }
+
+            ul li {
+                display: inline-block;
+            }
+
+        }
+
+        /*SECOND BREAK POINT === mobile */
+        @media only screen and (max-width : 600px) {
+
+            body {
+                background: white;
+            }
+
+            .grid-container {
+                display: grid;
+                grid-template-areas:
+                    'nav nav nav nav nav nav'
+                    'header header header header header header'
+                    'main main main main main main'
+                    'aside aside aside aside aside aside'
+                    'footer footer footer footer footer footer';
+                grid-gap: .5em;
+                padding: .5em;
+            }
+
+            ul li {
+                display: inline-block;
+            }
+			
+			img {
+				display: none;
+			}
+
+        }
